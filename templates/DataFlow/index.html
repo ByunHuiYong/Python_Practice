@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="kr">
+<title>웹페이지 작성</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<style>
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+}
+
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  /*background-image: url("../../static/DataFlow/images/img-home.jpg");*!*/
+  /*background-image: url("홈");*/
+  min-height: 10%;
+}
+
+.menu {
+  display: none;
+}
+</style>
+
+<!-- Navigationbar -->
+
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href=" " class="w3-bar-item w3-button w3-padding-large">Home</a>
+    <a href="#band" class="w3-bar-item w3-button w3-padding-large w3-hide-small">진행중인 프로젝트</a>
+    <a href="#contact" class="w3-bar-item w3-bu그tton w3-padding-large w3-hide-small">논문 리뷰</a>
+    <a href="#tour" class="w3-bar-item w3-button w3-padding-large w3-hide-small">인공지능</a>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">종목분석 <i class="fa fa-caret-down"></i></button>
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="대한유화" class="w3-bar-item w3-button">대한유화</a>
+        <a href="OCI" class="w3-bar-item w3-button">OCI</a>
+        <a href="헬릭스미스" class="w3-bar-item w3-button">헬릭스미스</a>
+        <a href="금호석유" class="w3-bar-item w3-button">금호석유</a>
+      </div>
+    </div>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i></button>
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="#" class="w3-bar-item w3-button">Merchandise</a>
+        <a href="#" class="w3-bar-item w3-button">Extras</a>
+        <a href="#" class="w3-bar-item w3-button">Media</a>
+      </div>
+    </div>
+    <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<br>
+<br>
+<br>
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h4 class="w3-bar-item"><b>Menu</b></h4>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#">Link</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#">Link</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#">Link</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#">Link</a>
+</nav>
+
+
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+<!--    <span class="w3-tag">최고의 데이터 최적의 선택</span>-->
+  </div>
+  <div class="w3-display-middle w3-center">
+    <span class="w3-black" style="font-size:90px">Data A</span>
+    <span class="w3-red" style="font-size:90px">I</span>
+    <span class="w3-black" style="font-size:90px">chemist Group</span>
+  </div>
+  <div class="w3-display-bottomright w3-center w3-padding-large">
+    <span class="w3-text-white">15 Adr street, 5015</span>
+  </div>
+</header>
+
+
+<!-- About Container -->
+<div class="w3-container" id="about">
+  <div class="w3-content" style="max-width:800px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">데이터 연금술사</span></h5>
+    <p>매일 매일 우리 곁에서 발생하는 수 많은 데이터들 잘 활용할 수는 없을까요? 당신의 최적의 금융선택을 위한 나침반이 되어드리겠습니다.</p>
+    <p>{{ current_data }} 오늘의 거시변수 요약 데이터 입니다. </p>
+    <div class="w3-panel w3-leftbar w3-light-grey">
+      <p><i> </i></p>
+      <p> </p>
+    </div>
+<!--    <img src="{% static 'DataFlow/images/WorldExchangeMap.png' %}" style="width:100%;max-width:1000px" class="w3-margin-top">-->
+    <p><strong>1 .</strong> 국가별 환율 데이터 </p>
+    <p><strong>2. </strong> 코스피, 코스닥 지수 대비 신용잔고 비율 </p>
+    <p><strong>3. </strong> 증시 워드클라우드 </p>
+  </div>
+</div>
+
+
+<!-- Add a background color and large text to the whole page -->
+
+<!--그레이 스타일-->
+<!--<div class="w3-sand w3-grayscale w3-large">-->
+
+
+<!--이미지 슬라이드 -->
+<div>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+     <style media="screen">
+      *{
+        margin: 0; padding: 0;
+      }
+      .slide{
+        width: 1000px;
+        height: 600px;
+        overflow: hidden;
+        position: relative;
+        margin: 0 auto;
+      }
+      .slide ul{
+        width: 5000px;
+        position: absolute;
+        top:0;
+        left:0;
+        font-size: 0;
+      }
+      .slide ul li{
+        display: inline-block;
+      }
+      #back{
+        position: absolute;
+        top: 250px;
+        left: 0;
+        cursor: pointer;
+        z-index: 1;
+      }
+      #next{
+        position: absolute;
+        top: 250px;
+        right: 0;
+        cursor: pointer;
+        z-index: 1;
+      }
+     </style>
+  </head>
+  <body>
+    <div class="slide">
+      <img id="back" src="{% static 'DataFlow/images/back.png' %}" alt="" width="100">
+      <ul>
+        <li><img src="{% static 'DataFlow/images/WorldExchangeMap.png' %}" alt="" width="1000" height="600"></li>
+        <li><img src="{% static 'DataFlow/images/신용잔고 코스피.png' %}" alt="" width="1000" height="600"></li>
+        <li><img src="{% static 'DataFlow/images/신용잔고 코스닥' %}"></li>
+        <li><img src="img/name4.png" alt="" width="1000" height="600"></li>
+        <li><img src="img/name5.png" alt="" width="1000" height="600"></li>
+      </ul>
+      <img id="next" src="{% static 'DataFlow/images/next.png' %}" alt="" width="100">
+    </div>
+  </body>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      var imgs;
+      var img_count;
+      var img_position = 1;
+
+      imgs = $(".slide ul");
+      img_count = imgs.children().length;
+
+      //버튼을 클릭했을 때 함수 실행
+      $('#back').click(function () {
+        back();
+      });
+      $('#next').click(function () {
+        next();
+      });
+
+      function back() {
+        if(1<img_position){
+          imgs.animate({
+            left:'+=1000px'
+          });
+          img_position--;
+        }
+      }
+      function next() {
+        if(img_count>img_position){
+          imgs.animate({
+            left:'-=1000px'
+          });
+          img_position++;
+        }
+      }
+
+
+      //이미지 끝까지 가면 버튼 사라지기
+
+
+      //첫 이미지로 돌아오기
+
+
+    });
+  </script>
+</div>
+
+
+<!-- Menu Container -->
+<div class="w3-container" id="주요 뉴스">
+  <div class="w3-content" style="max-width:1500px">
+
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">주요 뉴스</span></h5>
+
+    <div class="w3-row w3-center w3-card w3-padding">
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Eat');" id="myLink">
+        <div class="w3-col s6 tablink">국내</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Drinks');">
+        <div class="w3-col s6 tablink">세계</div>
+      </a>
+    </div>
+
+    <div id="Eat" class="w3-container menu w3-padding-48 w3-card">
+      <h5>석유화학업계, 기초제품 수익성 반토막… 실적 적신호</h5>
+      <p class="w3-text-grey">최근 미·중 무역분쟁 등 글로벌 경기가 나빠지면서 석유화학업계 주력사업인 기초소재부문에서의 가격과 수익성이 하락세를 보이고 있다.
+
+19일 증권업계와 석유화학업계 등에 따르면 석유화학산업의 ‘쌀’로 불리는 기초소재 에틸렌의 가격은 지난주 평균 기준 t당 710달러를 기록했다. 전년 동기 에틸렌 가격이 1260달러에 육박했던 것과 비교하면 1년 사이 44%가량 급락한 것이다.
+
+석유화학산업은 지난 3년간 중국의 수요 확대를 기반으로 에틸렌 가격 강세에 힘입어 호황을 누려 왔다. 실제로 지난 2017년과 지난해 2년간 에틸렌 가격은 각각 t당 1091달러와 1146달러를 기록해 왔다. </p><br>
+
+      <h5>	유가 급등, WTI 56.65달러…미·이란 일촉즉발</h5>
+      <p class="w3-text-grey">국제유가는 미·이란 일촉즉발 위기에 크게 올랐다.
+
+21일 한국석유공사에 따르면 20일(현지시간) 뉴욕상업거래소(NYMEX)의 WTI(서부텍사스산원유)는 전일대비 배럴당 2.89달러 급등한 56.65달러로 거래를 마쳤다.
+
+런던거래소(ICE)의 브렌트(Brent)유는 전일대비 배럴당 2.63달러 오른 64.45달러로 장을 마감했다.
+
+중동 두바이유는 전일대비 배럴당 1.39달러 상승한 62.61달러로 나타났다.</p><br>
+
+      <h5>화학업계 "B2B서 B2C로 영역 확장"…소재 기술력 접목</h5>
+      <p class="w3-text-grey">화학사들이 B2C로 사업을 확장해가고 있다. 소재 경쟁력을 바탕으로 잠재력이 큰 시장에 직접 참여하겠다는 것이다. 화학사는 대표적인 B2B 업계다.</p><br>
+
+      <h5>기준금리 인하, 꿈틀대는 부동산시장 불쏘시개 될까</h5>
+      <p class="w3-text-grey">한국은행이 금리 인하 가능성을 내비치면서 부동산시장에 묘한 기운이 감지되고 있다.
+
+금리가 인하되면 금융비용이 낮아지는 만큼 부동산시장 분위기가 살아나는 사례가 많은데, 지금은 규제로 묶여 어떤 방향으로 튈지 선뜻 예측하기 어렵다. 기준금리 인하가 잠잠하던 시장을 지피는 불쏘시개가 될지, 아니면 아무런 영향을 주지 못할 지를 두고 의견이 갈리고 있는데 부동산 수요자들도 시장이 어떤 영향을 받을지 관심을 두고 있다. </p><br>
+
+      <h5>Blueberry Pancakes</h5>
+      <p class="w3-text-grey">With syrup, butter and lots of berries 8.50</p>
+    </div>
+
+    <div id="Drinks" class="w3-container menu w3-padding-48 w3-card">
+      <h5>인내심 접은 연준, 연내 금리인하 여지 남겨, 2019-06-22</h5>
+      <p class="w3-text-grey">미국 중앙은행인 연방준비제도(연준)가 19일(현지 시각) 금리 인하를 강하게 시사했다. 연준은 통화정책 회의인 연방공개시장위원회(FOMC) 정례회의에서 기준금리를 현행 2.25~2.50%로 동결하면서도, 올해 금리를 낮출 가능성을 곳곳에서 드러냈다.
+      </p><br>
+
+      <h5>美 금리 인하, 유럽은 양적완화…각국 중앙銀 경기부양 '선회'</h5>
+      <p class="w3-text-grey">미국 중앙은행(Fed)의 기준금리 인하가 임박한 가운데 유럽중앙은행(ECB)은 양적완화를 추진하겠다는 뜻을 내비쳤다. 무역전쟁 심화로 글로벌 경기가 둔화하자 주요국 중앙은행들이 다시 경기부양적 통화정책으로 돌아서고 있다. 도널드 트럼프 미국 대통령은 유럽 중국 등의 완화적 통화정책은 ‘환율 조작’이라며 이에 대응해 Fed가 금리를 낮출 것을 또다시 요구했다.</p><br>
+
+      <h5>Corretto</h5>
+      <p class="w3-text-grey">Whiskey and coffee 5.00</p><br>
+
+      <h5>Iced tea</h5>
+      <p class="w3-text-grey">Hot tea, except not hot 3.00</p><br>
+
+      <h5>Soda</h5>
+      <p class="w3-text-grey">Coke, Sprite, Fanta, etc. 2.50</p>
+    </div>
+    <img src="{% static 'DataFlow/images/img-04.jpg' %}" style="width:100%;max-width:1000px;margin-top:32px;">
+  </div>
+</div>
+
+<!-- Contact/Area Container -->
+<div class="w3-container" id="where" style="padding-bottom:32px;">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">WHERE TO FIND US</span></h5>
+    <p>Find us at some address at some place.</p>
+    <img src="/w3images/map.jpg" class="w3-image" style="width:100%">
+    <p><span class="w3-tag">FYI!</span> We offer full-service catering for any event, large or small. We understand your needs and we will cater the food to satisfy the biggerst criteria of them all, both look and taste.</p>
+    <p><strong>Reserve</strong> a table, ask for today's special or just send us a message:</p>
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="How many people" required name="People"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required name="date" value="2017-11-16T20:00"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
+      <p><button class="w3-button w3-black" type="submit">SEND MESSAGE</button></p>
+    </form>
+  </div>
+</div>
+
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("myLink").click();
+</script>
+
+</body>
+</html>
